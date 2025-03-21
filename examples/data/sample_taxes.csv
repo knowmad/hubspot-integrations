@@ -1,0 +1,6 @@
+name,rate,country,state,city,postal_code,type,category,description
+Sales Tax CA,7.25,United States,CA,,,sales,state,California state sales tax
+Sales Tax NY,8.875,United States,NY,New York,10001,sales,state,New York State and City combined sales tax
+VAT UK,20,United Kingdom,,,,vat,country,UK Value Added Tax
+GST AU,10,Australia,,,,gst,country,Australian Goods and Services Tax
+VAT DE,19,Germany,,,,vat,country,German Value Added Tax
