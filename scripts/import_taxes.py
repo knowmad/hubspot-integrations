@@ -43,9 +43,13 @@ def main():
         # Only validate if dry-run is specified
         if args.dry_run:
             print(f"Dry run mode: Validating {args.csv_file} without importing")
-            # You would need to add a validate-only function to the import_taxes module
-            # For now, just print a message
-            print("CSV validation completed successfully")
+            # For now, just read and validate the CSV
+            from hubspot_tools.taxes.tax_import import read_csv_data, validate_csv_data
+            data = read_csv_data(args.csv_file)
+            if validate_csv_data(data):
+                print(f"CSV validation completed successfully. Found {len(data)} records.")
+            else:
+                print("CSV validation failed.")
             sys.exit(0)
         
         # Pass the API token to the import function
