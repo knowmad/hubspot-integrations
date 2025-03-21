@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-HubSpot Tax Batch Import Script
+HubSpot Tax Batch Import Module
 -------------------------------
-This script imports tax data from a CSV file into HubSpot using the batch create API.
+This module imports tax data from a CSV file into HubSpot using the batch create API.
 """
 
 import os
@@ -11,7 +11,7 @@ import json
 import time
 import logging
 import yaml
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 import requests
 
 # Configure logging
@@ -19,7 +19,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("tax_import.log"),
+        logging.FileHandler("logs/tax_import.log"),
         logging.StreamHandler()
     ]
 )
@@ -72,21 +72,9 @@ def get_hubspot_api_token(config_path="../hubspot.config.yml", portal_name=None)
     
     return access_token
 
-# Get API token from HubSpot config
-try:
-    API_TOKEN = get_hubspot_api_token()
-    logger.info(f"Successfully loaded API token for portal")
-except Exception as e:
-    logger.error(f"Failed to load HubSpot API token: {e}")
-    exit(1)
-
 # Constants
 BATCH_SIZE = 100  # HubSpot's maximum batch size
 API_ENDPOINT = "https://api.hubapi.com/crm/v3/objects/taxes/batch/create"
-HEADERS = {
-    "Authorization": f"Bearer {API_TOKEN}",
-    "Content-Type": "application/json"
-}
 
 def read_csv_data(file_path: str) -> List[Dict[str, Any]]:
     """Read and parse the CSV file containing tax data."""
@@ -149,10 +137,15 @@ def create_batch_payload(records: List[Dict[str, Any]]) -> Dict[str, List[Dict[s
         "inputs": inputs
     }
 
-def send_batch_request(payload: Dict[str, Any]) -> Dict[str, Any]:
+def send_batch_request(payload: Dict[str, Any], api_token: str) -> Dict[str, Any]:
     """Send a batch request to the HubSpot API."""
+    headers = {
+        "Authorization": f"Bearer {api_token}",
+        "Content-Type": "application/json"
+    }
+    
     try:
-        response = requests.post(API_ENDPOINT, headers=HEADERS, json=payload)
+        response = requests.post(API_ENDPOINT, headers=headers, json=payload)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
@@ -161,13 +154,31 @@ def send_batch_request(payload: Dict[str, Any]) -> Dict[str, Any]:
             logger.error(f"Response: {e.response.text}")
         raise
 
-def import_taxes(csv_file_path: str) -> Dict[str, int]:
-    """Main function to import taxes from CSV to HubSpot."""
+def import_taxes(csv_file_path: str, api_token: Optional[str] = None) -> Dict[str, int]:
+    """
+    Main function to import taxes from CSV to HubSpot.
+    
+    Args:
+        csv_file_path: Path to the CSV file containing tax data
+        api_token: HubSpot API token (if None, will try to load from config)
+        
+    Returns:
+        Dictionary with import statistics
+    """
     stats = {
         "total": 0,
         "successful": 0,
         "failed": 0
     }
+    
+    # If no API token provided, try to load it
+    if not api_token:
+        try:
+            api_token = get_hubspot_api_token()
+            logger.info("Successfully loaded API token from default config")
+        except Exception as e:
+            logger.error(f"Failed to load HubSpot API token: {e}")
+            raise
     
     # Read and validate CSV data
     data = read_csv_data(csv_file_path)
@@ -192,7 +203,7 @@ def import_taxes(csv_file_path: str) -> Dict[str, int]:
         try:
             # Create and send batch payload
             payload = create_batch_payload(batch)
-            result = send_batch_request(payload)
+            result = send_batch_request(payload, api_token)
             
             # Process results
             successful_results = len(result.get("results", []))
@@ -214,31 +225,3 @@ def import_taxes(csv_file_path: str) -> Dict[str, int]:
     
     logger.info(f"Import completed: {stats['successful']} successful, {stats['failed']} failed")
     return stats
-
-if __name__ == "__main__":
-    import argparse
-    
-    parser = argparse.ArgumentParser(description="Import tax data from CSV to HubSpot")
-    parser.add_argument("csv_file", help="Path to the CSV file containing tax data")
-    parser.add_argument("--config", default="../hubspot.config.yml", 
-                        help="Path to HubSpot config file (default: ../hubspot.config.yml)")
-    parser.add_argument("--portal", help="HubSpot portal name to use (default: uses defaultPortal from config)")
-    args = parser.parse_args()
-    
-    try:
-        # Update API token if portal or config specified
-        if args.portal or args.config != "../hubspot.config.yml":
-            global API_TOKEN, HEADERS
-            API_TOKEN = get_hubspot_api_token(args.config, args.portal)
-            HEADERS = {
-                "Authorization": f"Bearer {API_TOKEN}",
-                "Content-Type": "application/json"
-            }
-            logger.info(f"Using API token for portal: {args.portal or 'default'}")
-        
-        results = import_taxes(args.csv_file)
-        logger.info(f"Import summary: {json.dumps(results)}")
-        print(f"Import completed: {results['successful']} successful, {results['failed']} failed")
-    except Exception as e:
-        logger.error(f"Import failed: {e}")
-        print(f"Import failed: {e}")
