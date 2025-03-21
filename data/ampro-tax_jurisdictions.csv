@@ -1,0 +1,688 @@
+jurisdiction_id,jurisdiction_desc,tax_percentage
+ALLOTHER,Non Reporting Jurisdictions,0
+CALIF,CA California State Tax,0.0775
+CN.ALBERTA,CN.Alberta,0.05
+CN.BRITISH,CN.British Columbia,0.12
+CN.LABRADO,CN.Labrador,0.13
+CN.MANITOB,CN.Manitoba,0.13
+CN.NEWBRUN,CN.New Brunswick,0.13
+CN.NEWFOUN,CN.Newfoundland,0.13
+CN.NOVASCO,CN.Nova Scotia,0.15
+CN.NUNAVUT,CN.Nunavut,0.05
+CN.NWTERRI,CN.NW Territories,0.05
+CN.ONTARIO,CN.Ontario,0.13
+CN.PRINCEE,CN.Prince Edward Island,0.14
+CN.QUEBEC,CN.Quebec,0.14975
+CN.SASKATC,CN.Saskatchewan,0.1
+CN.YUKON,CN.Yukon,0.05
+FL.ALACHUA,FL Alachaua County Tax,0.07
+FL.BAKER,FL Baker County,0.07
+FL.BAY,FL Bay County,0.07
+FL.BOCARAT,FL.Boca Raton,0.07
+FL.BOYNTON,FL.Boynton Beach,0.06
+FL.BRADFRD,FL Bradford County,0.07
+FL.BREVARD,FL Brevard County,0.07
+FL.BROWARD,FL Broward County,0.07
+FL.CALHOUN,FL Calhoun County,0.075
+FL.CAPECOR,FL.Cape Coral,0.06
+FL.CHARLOT,FL Charlotte County,0.07
+FL.CITRUS,FL Citrus County,0.06
+FL.CLAY,FL Clay County Tax,0.075
+FL.COLLIER,FL Collier County,0.07
+FL.COLUMBI,FL Columbia County,0.07
+FL.DELRAY,FL.Delray Beach,0.06
+FL.DESOTO,FL DeSoto County,0.075
+FL.DIXIE,FL Dixie County,0.07
+FL.DUVAL,FL Duval County,0.075
+FL.ESCAMBI,FL Escambi County,0.075
+FL.EXEMPT,FLA Tax Exempt,0
+FL.FLAGLER,FL Flagler County,0.07
+FL.FRANKLI,FL Franklin County,0.07
+FL.FTLAUDE,FL.FtLauderdale,0.06
+FL.GADSDEN,FL Gadsden County,0.075
+FL.GAINESV,FL.Gainesville,0.06
+FL.GILCHRS,FL Gilchrist County,0.07
+FL.GLADES,FL Glades County,0.07
+FL.GULF,FL Gulf County,0.07
+FL.HAMILTO,FL Hamilton County,0.07
+FL.HARDEE,FL Hardee County,0.07
+FL.HENDRY,FL Hendry County,0.07
+FL.HERNAND,FL Hernando County,0.065
+FL.HIGHLAN,FL Highlands County,0.075
+FL.HILL,FL Hill County Tax,0.01
+FL.HILLS,FL Hillsborough County,0.075
+FL.HILLSBO,FL Hilldborough County,0.075
+FL.HOLLYWO,FL.Hollywood,0.06
+FL.HOLMES,FL Holmes County,0.075
+FL.INDIAN,FL Indian River Cty,0.07
+FL.JACKSON,FL Jackson County,0.075
+FL.JEFFERS,FL Jefferson County,0.07
+FL.JUPITER,FL.Jupiter,0.06
+FL.LAFAYET,FL Layfayette County,0.07
+FL.LAKE,FL Lake County,0.07
+FL.LAKEWOR,FL.Lake Worth,0.06
+FL.LEE,FL Lee County,0.065
+FL.LEHIGHA,FL.Lehigh Acres,0.06
+FL.LEON,FL Leon County,0.075
+FL.LEVY,FL Levy County,0.07
+FL.LIBERTY,FL Liberty County,0.075
+FL.MADISON,FL Madison County,0.075
+FL.MANATEE,FL Manatee County,0.07
+FL.MARION,FL Marion County,0.07
+FL.MARTIN,FL Martin County,0.065
+FL.MELBOUR,FL.Melbourne,0.06
+FL.MIA-DAD,FL Miami-Dade County Tax,0.07
+FL.MONROE,FL Monroe Country,0.075
+FL.NAPLES,FL.Naples,0.06
+FL.NASSAU,FL Nassau County,0.07
+FL.OCALA,FL.Ocala,0.06
+FL.OKALOOS,FL Okaloosa County,0.07
+FL.OKEECHO,FL Okeechobee County,0.07
+FL.ORANGE,FL Orange County,0.07
+FL.OSCEOLA,FL Oseceola County,0.075
+FL.PALBEA,FL.PALM BEACH COUNTY,0.07
+FL.PALMBAY,FL.Palm Beach County,0.07
+FL.PALMBEA,FL Palm Beach Gardens,0.06
+FL.PASCO,FL Pasco County,0.07
+FL.PINELLA,FL Pinellas County,0.07
+FL.POLK,FL Polk County,0.07
+FL.PUTNAM,FL Putnam County,0.07
+FL.SAINTJO,FL Saint John County,0.065
+FL.SAINTLU,FL Saint Lucie County,0.07
+FL.SANFORD,FL.Sanford,0.06
+FL.SANTARO,FL Santa Rosa County,0.075
+FL.SARASOT,FL Sarasota County,0.07
+FL.SEMINOL,FL Seminole County,0.07
+FL.STATE,FL State Tax,0.06
+FL.STAUGUS,FL.StAugustine,0.06
+FL.SUMTER,FL Sumter County,0.07
+FL.SUWANNE,FL Suwannee County,0.07
+FL.TAYLOR,FL Taylor County,0.07
+FL.UNION,FL Union County,0.07
+FL.VOLUSIA,FL Volusia County,0.065
+FL.WAKULLA,FL Wakulla County,0.07
+FL.WALTON,FL Walton County,0.07
+FL.WASHING,FL Washington County,0.075
+GA.APP2,GA.APP2,0.08
+GA.ATK2,GAAtkinsonCo,0.08
+GA.BAC2,GA Bacon Co,0.08
+GA.BAK2,GA Baker Co,0.07
+GA.BALD2,GA Baldwin Co,0.07
+GA.BAN2,GA Bank Co,0.08
+GA.BAR2,GA Bartow Co,0.07
+GA.BARR2,Ga Barrow Co,0.07
+GA.BEN2,GA Ben Hill Co,0.08
+GA.BER2,GA Berrien Co,0.08
+GA.BIBB2,GA Bibb Co,0.07
+GA.BLE2,GA Bleckley Co,0.08
+GA.BRA2,GA Brantley Co,0.08
+GA.BROO2,GA Brooks Co,0.08
+GA.BRY2,GA Bryan Co,0.08
+GA.BULL2,GA Bulloch Co,0.08
+GA.BURKE,GA.Burke,0.08
+GA.BUT2,GA Butt County,0.07
+GA.CAL2,GA Calhoun Co,0.08
+GA.CAM2,GA.Camden Co,0.07
+GA.CAND2,GA Candler Co,0.08
+GA.CAR2,GA Carroll Co,0.07
+GA.CATO2,GA Catoosa Co,0.07
+GA.CHA2,GA Charlton Co,0.08
+GA.CHAT2,GA Chattooga Co,0.07
+GA.CHATTAH,GA.Chattahoochee,0.08
+GA.CHER2,GA Cherokee Cty,0.06
+GA.CHTH2,GA Chatham Co,0.07
+GA.CLA2,GA Clay Co,0.08
+GA.CLAR2,GA Clarke Co,0.08
+GA.CLAY2,GA Clayton Co,0.08
+GA.CLIN2,GA Clinch Co,0.08
+GA.COBB2,GA Cobb Co,0.06
+GA.COF2,GA Coffee Co,0.08
+GA.COLQ2,GA Colquitt Co,0.08
+GA.COLU2,GA Columbia Co,0.08
+GA.COO2,GA Cook Co,0.08
+GA.COWE2,GA Coweta Co,0.08
+GA.CRA2,GA Crawford Co,0.08
+GA.CRI2,GA Crisp Co,0.08
+GA.DAD2,GA Dade Co,0.07
+GA.DAWS2,GA Dawson Co,0.07
+GA.DEC2,GA Decatur Co,0.08
+GA.DEKA2,GA Dekalb Co,0.08
+GA.DOD2,GA Dodge Co,0.08
+GA.DOO2,GA Dooley Co,0.08
+GA.DOU2,GA Douglas Co,0.07
+GA.DOUG2,GA Dougherty Co,0.08
+GA.EAR2,GA Early Co,0.08
+GA.ECH2,GA Echols County,0.08
+GA.EFFI2,GA Effinghan Co,0.08
+GA.ELBE2,GA Elbert Co,0.08
+GA.EMA2,GA Emanuel Co,0.08
+GA.EVA2,GA Evans Co,0.08
+GA.FANN2,GA.Fannin Cty,0.07
+GA.FAYE2,GA Fayette Co,0.07
+GA.FLOY2,GA Floyd Co,0.07
+GA.FORS2,GA Forsyth Co,0.07
+GA.FRAN2,GA Franklin Co,0.07
+GA.FULT2,GA.Fulton/Atlanta,0.089
+GA.GIL2,GA Gilmer Co,0.07
+GA.GLA2,GA Glascock Co,0.08
+GA.GLYN2,GA Glynn Co,0.06
+GA.GORD2,Ga Gordon Co,0.07
+GA.GRA2,GA Grady Co,0.08
+GA.GREE2,GA Greene Co,0.07
+GA.GWIN2,GA Gwinnett Co,0.0775
+GA.HABE2,GA Habersham Co,0.07
+GA.HALL2,GA Hall Co,0.08
+GA.HAN2,GA Hancock Co,0.08
+GA.HAR2,GA Harris Co,0.08
+GA.HARA2,GA Haralson Co,0.08
+GA.HART2,GA Hart Co,0.07
+GA.HEA2,GA Heard Co,0.07
+GA.HENR2,GA Henry Co,0.08
+GA.HOU2,GA Houston Co,0.07
+GA.IRW2,GA Irwin Co,0.08
+GA.JAC2,GA Jackson Co,0.07
+GA.JAS2,GA Jasper Co,0.07
+GA.JEF2,GA Jeff Davis Co,0.08
+GA.JEFF2,GA. Jefferson Co,0.08
+GA.JENK2,GA Jenkins Co,0.08
+GA.JOH2,GA Johnson Co,0.08
+GA.JON2,GA Jones Co,0.07
+GA.LAM2,GA Lamar Co,0.07
+GA.LAN2,GA Lanier Co,0.08
+GA.LAUR2,GA Laurens Co,0.08
+GA.LEE2,GA Lee Co,0.08
+GA.LIBE2,GA Liberty Co,0.08
+GA.LINC2,GA Lincoln Co,0.08
+GA.LON2,GA.Long Co,0.08
+GA.LOW2,GA Lowndes Co,0.08
+GA.LUMP2,GA Lumpkin Co,0.08
+GA.MAC2,GA Macon Co,0.08
+GA.MAD2,GA.Madison Co,0.07
+GA.MARI2,GA Marion Co,0.08
+GA.MCDF2,GA McDuffie Co,0.08
+GA.MCI2,GA Mcintosh Co,0.08
+GA.MER2,GA Meriwether Co,0.08
+GA.MILL2,GA Miller Co,0.08
+GA.MIT2,GA Mitchell Co,0.08
+GA.MON2,GA Monroe Co,0.07
+GA.MONT2,GA Montgomery Co,0.08
+GA.MOR2,GA Morgan Co,0.08
+GA.MUR2,GA Murray Co,0.08
+GA.MUS2,GA Muscogee Co,0.08
+GA.NEW2,GA Newton Co,0.07
+GA.OCO2,GA Oconee Co,0.07
+GA.OGL2,GA Oglethorpe Co,0.08
+GA.PAU2,GA Paulding Co,0.07
+GA.PEAC2,Ga Peach Co,0.07
+GA.PIC2,GA Pickens Co,0.07
+GA.PIER2,GA Pierce Co,0.08
+GA.PIK2,GA.Pike Co,0.07
+GA.POL2,GA Polk Co,0.07
+GA.PUL2,GA Pulaski Co,0.07
+GA.PUT2,GA Putnam Co,0.08
+GA.QUI2,GA Quitman Co,0.08
+GA.RABU2,GA Rabun Co,0.07
+GA.RAN2,GA Randolph Co,0.08
+GA.RICH2,GA Richmond Co,0.08
+GA.ROCK2,GA Rockdale Co,0.07
+GA.SCH2,GA Schley Co,0.08
+GA.SCR2,GA Screven Co,0.07
+GA.SEM2,GA Seminole Co,0.08
+GA.SPAL2,GA Spalding Co,0.07
+GA.STE2,GA Stewart Co,0.08
+GA.STEP2,GA Stephens Co,0.07
+GA.SUM2,GA Sumter Co,0.08
+GA.TAL2,GA Talbot Co,0.08
+GA.TALI2,GA.Taliaferro Co,0.08
+GA.TATT2,GA Tattnall Co,0.08
+GA.TAY2,GA Taylor Co,0.08
+GA.TEL2,GA Telfair Co,0.08
+GA.TER2,GA Terrell Co,0.08
+GA.THOM2,GA Thomas Co,0.07
+GA.TIF2,GA Tift Co,0.08
+GA.TOOM2,GA Toombs Co,0.08
+GA.TOW2,GA Towns Co,0.07
+GA.TRE2,GA Treutlen Co,0.08
+GA.TRO2,GA Troup Co,0.07
+GA.TUR2,GA Turner Co,0.08
+GA.TWI2,GA Twiggs Co,0.07
+GA.UNI2,GA Union Co,0.07
+GA.UPSO2,GA Upson Co,0.08
+GA.WAL2,GA Walton Co,0.07
+GA.WALK2,GA Walker Co,0.08
+GA.WAR2,GA Warren Co,0.08
+GA.WARE2,GA Ware Co,0.08
+GA.WASH2,GA Washington Co,0.08
+GA.WAY2,GA Wayne Co,0.08
+GA.WEB2,GA Webster Co,0.08
+GA.WHEE2,GA Wheeler Co,0.08
+GA.WHI2,GA White Co,0.07
+GA.WHIT2,GA Whitfield Co,0.07
+GA.WIK2,GA.Wilkinson Co,0.07
+GA.WIL2,GA Wilcox Co,0.08
+GA.WILK2,GA Wilkes Co,0.08
+GA.WOR2,GA Worth Co,0.08
+MD MONTGOM,MD.Montgomery County,0.06
+MD.ALLEGAN,MD Allegany County,0.06
+MD.ANNEARU,MD Anne Arundel,0.06
+MD.BALTCIT,MD Baltimore City,0.06
+MD.BALTIMO,MD Baltimore County,0.06
+MD.CALVERT,MD Calvert County,0.06
+MD.CAROLIN,MD Caroline County,0.06
+MD.CARROL,MD Carroll County,0.06
+MD.CECIL,Md Cecil County,0.06
+MD.CHARLES,MD Charles County,0.06
+MD.DORCHES,MD Dorchester County,0.06
+MD.FREDERI,MD Frederick,0.06
+MD.GARRETT,MD Garrett County,0.06
+MD.HARFORD,MD Harford County,0.06
+MD.HOWARD,MD Howard County,0.06
+MD.KENT,MD Kent County,0.06
+MD.MONT,MD.MONTGOMERY,0
+MD.MONTOGO,MD.Montogomery County,0.06
+MD.PRINCEG,MD Prince George's County,0.06
+MD.QUEENAN,MD Queen Anne's County,0.06
+MD.SOMERSE,MD Somerset County,0.06
+MD.STMARY,MD ST. Mary's County,0.06
+MD.TALBOT,MD Talbot County,0.06
+MD.WASHING,MD Washington County,0.06
+MD.WICOMIC,MD Wicomico County,0.06
+MD.WORCEST,MD Worchester County,0.06
+NC.ALAM2,NC Alamance Co .0200,0.0675
+NC.ALEX2,NC Alexander Co .0225,0.07
+NC.ALLE2,NC Alleghaney Co .0225,0.07
+NC.ANSO2,NC Anson Co .0225,0.07
+NC.ASHE2,NC Ashe Co .0225,0.07
+NC.AVER2,NC Avery Co .0200,0.0675
+NC.BEAU2,NC Beaufort Co .0200,0.0675
+NC.BERT2,NC Birtie Co .0225,0.07
+NC.BLAD2,NC Bladen Co .0200,0.0675
+NC.BRUN2,NC Brunswick Co .0200,0.0675
+NC.BUNC2,NC Buncombe Co .0225,0.07
+NC.BURK2,NC Burke Co .0200,0.0675
+NC.CABA2,NC Cabarrus Co .0225,0.07
+NC.CALD2,NC Caldwell Co .0200,0.0675
+NC.CAMD2,NC Camden Co .0200,0.0675
+NC.CART2,NC Carteret Co .0200,0.07
+NC.CASW2,NC Caswell Co .0200,0.0675
+NC.CATA2,NC Catawba Co .0225,0.07
+NC.CHAT2,NC Chatham Co .0225,0.07
+NC.CHER2,NC Cherokee Co .0225,0.07
+NC.CHOW2,NC Chowan Co .0200,0.0675
+NC.CLAY2,NC Clay Co .0225,0.07
+NC.CLEV2,NC Cleveland Co .0200,0.0675
+NC.COLU2,NC Columbus Co .0200,0.0675
+NC.CRAV2,NC Craven Co .0200,0.0675
+NC.CUMB2,NC Cumberland Co .0225,0.07
+NC.CURR2,NC Currituck Co .0200,0.0675
+NC.DARE2,NC Dare Co .0200,0.0675
+NC.DAVI2,NC Davidson Co .0225,0.07
+NC.DAVIE2,NC Davie Co .0200,0.0675
+NC.DUPL2,NC Duplin Co .0225,0.07
+NC.DURH2,NC Durham Co .0225,0.075
+NC.EDGE2,NC Edgecombe Co .0225,0.07
+NC.FORS2,NC Forsyth Co .0225,0.07
+NC.FRAN2,NC Franklin Co .0200,0.0675
+NC.GAST2,NC Gaston Co .0225,0.07
+NC.GATE2,NC Gates Co .0200,0.0675
+NC.GRAH2,NC Graham Co .0225,0.07
+NC.GRAN2,NC Granville Co .0200,0.0675
+NC.GREE2,NC Greene Co .0225,0.07
+NC.GUIL2,NC Guilford Co .0200,0.0675
+NC.HALI2,NC Halifax Co .0225,0.07
+NC.HARN2,NC Harnett Co .0225,0.07
+NC.HAYW2,NC Haywood Co .0225,0.07
+NC.HEND2,NC Henderson Co .0200,0.0675
+NC.HERT2,NC Hertford Co .0225,0.07
+NC.HOKE2,NC Hoke Co .0200,0.0675
+NC.HYDE2,NC Hyde Co .0200,0.0675
+NC.IRED2,NC Iredell Co .0200,0.0675
+NC.JACK2,NC Jackson Co .0225,0.07
+NC.JOHN2,NC Johnston Co .0200,0.0675
+NC.JONE2,NC Jones Co .0225,0.07
+NC.LEE2,NC Lee Co .0225,0.07
+NC.LENO2,NC Lenoir Co .0200,0.0675
+NC.LINC2,NC Lincoln Co .0225,0.07
+NC.MACO2,NC Macon Co .0200,0.0675
+NC.MADI2,NC Madison Co .0225,0.07
+NC.MANUF,NC Manufacturers,0.01
+NC.MART2,NC Martin Co .0225,0.07
+NC.MCDO2,NC McDowell Co .0200,0.0675
+NC.MECK2A,NC Mecklenburg Co .0200,0.0725
+NC.MITC2,NC Mitchell Co .0200,0.0675
+NC.MONT2,NC Montgomery Co .0225,0.07
+NC.MOOR2,NC Moore Co .0225,0.07
+NC.NASH2,NC Nash Co .0200,0.07
+NC.NEWH2,NC New Hanover Co .0225,0.07
+NC.NORT2,NC Northampton Co .0200,0.0675
+NC.ONSL2,NC Onslow Co .0225,0.07
+NC.ORAN2,NC Orange Co .0225,0.075
+NC.PAML2,NC Pamlico Co .0200,0.0675
+NC.PASQ2,NC Pasquotank Co .0225,0.07
+NC.PEND2,NC Pender Co .0200,0.0675
+NC.PERQ2,NC Perquimans Co .0200,0.0675
+NC.PERS2,NC.Person  CO .0200,0.0675
+NC.PITT2,NC Pitt Co .0225,0.07
+NC.POLK2,NC Polk Co .0200,0.0675
+NC.RAND2,NC Randolph Co .0225,0.07
+NC.RICH2,NC Richmond Co .0200,0.0675
+NC.ROBE2,NC Robeson Co .0225,0.07
+NC.ROCK2,NC Rockingham Co .0225,0.07
+NC.ROWA2,NC Rowan Co .0225,0.07
+NC.RUTH2,NC Rutherford Co .0225,0.07
+NC.SAMP2,NC Sampson Co .0225,0.07
+NC.SCOT2,NC Scotland Co .0200,0.0675
+NC.STAN2,NC Stanley Co .0225,0.07
+NC.STOK2,NC Stokes Co .0200,0.0675
+NC.SURR2,NC Surry Co .0225,0.07
+NC.SWAI2,NC Swain Co .0225,0.07
+NC.TRAN2,NC Transylvania Co .0200,0.0675
+NC.TYRR2,NC Tyrrell Co .0200,0.0675
+NC.UNIO2,NC Union Co .0200,0.0675
+NC.VANC2,NC Vance Co .0200,0.0675
+NC.WAKE2,NC Wake Co .0200,0.0725
+NC.WAKE3,NC. Wake County 6.75 (Transit),0.0675
+NC.WARR2,NC Warren Co .0200,0.0675
+NC.WASH2,NC Washington Co .0225,0.07
+NC.WATA2,NC Watauga Co .0200,0.0675
+NC.WAYN2,NC Wayne Co .0200,0.0675
+NC.WILK2,NC Wilkes Co .0225,0.07
+NC.WILS2,NC Wilson Co .0200,0.07
+NC.YADK2,NC Yadkin Co .0200,0.0675
+NC.YANC2,NC Yancey Co .0200,0.0675
+SC.ABBE2,SC Abbeville Co 6,0.07
+SC.AIKE2,SC Aiken Co 1,0.08
+SC.ALLE2,"SC Allendale Co 1,6",0.08
+SC.ANDE2,"SC Anderson Co 1,3",0.07
+SC.BAMB2,"SC Bamberg Co 2,6",0.08
+SC.BARN2,SC Barnwell Co 6,0.08
+SC.BEAU2,SC Beaufort Co 0,0.07
+SC.BERK2,"SC Berkeley Co 3,6",0.09
+SC.CALH2,SC Calhoun Co 6,0.08
+SC.CHAR2,"SC Charleston Co 2,3,6",0.09
+SC.CHER2,"SC Cherokee Co 2,6",0.08
+SC.CHES2,"SC Chester Co 1,6",0.08
+SC.CHST2,"SC Chesterfield Co 2,6",0.08
+SC.CLAR2,"SC Clarendon Co 2,6",0.08
+SC.COLL2,SC Colleton Co 6,0.08
+SC.DARL2,"SC Darlington Co 2,6",0.08
+SC.DILL2,"SC Dillion Co 2,6",0.08
+SC.DORC2,SC Dorchester Co 3,0.07
+SC.EDGE2,SC Edgefiled Co 6,0.08
+SC.FAIR2,SC Fairfield Co 6,0.07
+SC.FLOR2,"SC Florence Co 1,2,6",0.08
+SC.GEOR2,SC Georgetown Co 0,0.06
+SC.GRNV2,SC Greenville Co 0,0.06
+SC.GRNW2,SC Greenwood Co 0,0.07
+SC.HAMP2,"SC Hampton Co 1,6",0.07
+SC.HORR2,"SC Horry Co 1,2",0.08
+SC.JASP2,"SC Jasper Co 2,6",0.08
+SC.KERS2,SC Kershaw Co 6,0.08
+SC.LANC2,"SC Lancaster Co 1,6",0.08
+SC.LAUR2,SC Laurens Co 6,0.08
+SC.LEE2,"SC Lee Co 2,6",0.08
+SC.LEXI2,SC Lexington Co 2,0.07
+SC.MARI2,"SC Marion Co 2,6",0.08
+SC.MARL2,SC Marlboro Co 6,0.08
+SC.MCCO2,SC McCormick Co 6,0.08
+SC.MYRT2,SC Myrtle Beach City 7,0.09
+SC.NEWB2,SC Newberry Co 1,0.07
+SC.OCON2,SC Oconee Co 0,0.06
+SC.ORAN2,SC Orangeburg Co 1,0.07
+SC.PICK2,SC Pickens Co 6,0.07
+SC.RICH2,"SC Richland Co 3,6",0.08
+SC.SALU2,SC Saluda Co 6,0.08
+SC.SPAR2,SC Spartanburg Co 0,0.07
+SC.SUMT2,"SC Sumter Co 1,6",0.07
+SC.UNIO2,SC Union Co 0,0.07
+SC.WILL2,SC Williamsburg Co 6,0.08
+SC.YORK2,SC York Co 1,0.07
+TN. CROC,TN Crockkett Co,0.0275
+TN.ANDE,TN Anderson County Tax,0.0275
+TN.BEDF,TN Bedford Co,0.0275
+TN.BENT,TN Benton Co,0.0275
+TN.BLED,TN Bledsoe Co,0.0225
+TN.BLOU,TN Blount County Tax,0.0275
+TN.BRAD,TN Bradley County Tax,0.0275
+TN.CAMP,TN Campbell Co,0.0225
+TN.CANN,TN Cannon Co,0.0175
+TN.CARR,TN Carroll Co,0.0275
+TN.CART,TN Carter County Tax,0.0275
+TN.CHEA,TN Cheatham Co,0.0225
+TN.CHES,TN.Chester Co,0.0275
+TN.CLAI,TN Claiborne County Tax,0.0225
+TN.CLAY,TN Clay Co,0.0275
+TN.COCK,TN Cocke County Tax,0.0275
+TN.COFF,TN Coffee Co,0.0275
+TN.CROC,TN Crockett Co,0.0275
+TN.CUMB,TN Cumberland Co,0.0275
+TN.DAVI,TN Davidson County Tax,0.0225
+TN.DECA,TN Decatur Co,0.025
+TN.DEKA,TN Dekalb Co,0.0275
+TN.DICK,Tn Dickson Co,0.0275
+TN.DYER,TN Dyer Co,0.0275
+TN.ELIZCTY,TN Elizabethton City Tax,0.005
+TN.FAYE,TN Fayette County Tax,0.0225
+TN.FENT,TN Fentress Co,0.025
+TN.FRAN,TN Franklin County Tax,0.0225
+TN.GIBS,TN Gibson Co,0.0275
+TN.GILE,TN Giles Co,0.025
+TN.GRAI,TN Grainger Co,0.0275
+TN.GREE,TN Greene County Tax,0.0275
+TN.GRUN,TN Grundy Co,0.0225
+TN.HAMB,TN Hamblen County Tax,0.0275
+TN.HAMI,TN Hamilton County Tax,0.0225
+TN.HANC,TN Hancock Co,0.02
+TN.HARD,TN Hardeman Co,0.0275
+TN.HARI,TN Hardin Co,0.025
+TN.HAWK,TN Hawkins County Tax,0.0275
+TN.HAYW,TN Haywood Co,0.0275
+TN.HEND,TN Henderson Co,0.0275
+TN.HENR,TN Henry Co,0.0225
+TN.HICK,TN Hickman Co,0.0275
+TN.HOUS,TN Houston Co,0.0275
+TN.HUMP,TN Humphreys Co,0.0275
+TN.JACK,TN Jackson Co,0.0275
+TN.JEFF,TN Jefferson County Tax,0.0275
+TN.JOHN,TN Johnson County Tax,0.015
+TN.KINGCTY,TN Kingsport City Tax,0.0025
+TN.KNOX,TN Knox County Tax,0.0225
+TN.LAKE,TN Lake Co,0.0275
+TN.LAUD,TN Lauderdale Co,0.0275
+TN.LAWR,TN Lawrence Co,0.0275
+TN.LEW,TN Lewis Co,0.025
+TN.LINC,TN Lincoln Co,0.025
+TN.LOUD,TN Loudon County Tax,0.02
+TN.MACO,TN Macon Co,0.0225
+TN.MADI,TN Madison Co,0.0275
+TN.MARI,TN Marion Co,0.0275
+TN.MARS,TN Marshall Co,0.0225
+TN.MAUR,TN Maury County Tax,0.0225
+TN.MCMI,TN Mcminn Co,0.02
+TN.MCNA,TN McNairy Co,0.0225
+TN.MEIG,TN Meigs Co,0.02
+TN.MONR,TN Monroe County Tax,0.0225
+TN.MONT,TN Montgomery Co,0.025
+TN.MOOR,TN Moore Co,0.025
+TN.MORG,TN Morgan County Tax,0.02
+TN.MORRCTY,TN Morristown City Tax,0.0025
+TN.OBIO,TN Obion Co,0.0275
+TN.OVER,TN Overton Co,0.025
+TN.PERR,TN Perry Co,0.025
+TN.PICK,TN Pickett Co,0.0275
+TN.POLK,TN Polk County Tax,0.0225
+TN.PUTN,TN.Putnam Co,0.0275
+TN.RHEA,TN Rhea Co,0.0275
+TN.ROAN,TN Roane Co,0.025
+TN.ROBE,TN Robertson Co,0.0275
+TN.RUTH,TN Rutherford Co,0.0275
+TN.SCOT,TN Scott Co,0.0225
+TN.SEQU,TN Sequatchie Co,0.0225
+TN.SEVI,TN Sevier County Tax,0.0275
+TN.SHEL,TN Shelby County Tax,0.0225
+TN.SMIT,TN Smith Co,0.0275
+TN.STATE,TN State Tax,0.07
+TN.STEW,TN Stewart Co,0.0225
+TN.SULL,TN Sullivan County Tax,0.0225
+TN.SUMN,TN Sumner Co,0.0225
+TN.TIPT,TN Tipton Co,0.0225
+TN.TROU,TN Trousdale Co,0.0225
+TN.UNIC,TN Unicoi Co,0.0275
+TN.UNION,TN Union Co,0.0225
+TN.VANB,TN VanBuren Co,0.0275
+TN.WARR,TN Warren County Tax,0.0275
+TN.WASH,TN Washington County Tax,0.025
+TN.WAYN,TN Wayne Co,0.0275
+TN.WEAK,TN Weakley Co,0.0275
+TN.WHIT,TN White Co,0.0225
+TN.WILL,TN Williamson Co,0.0225
+TN.WILS,TN Wilson Co,0.0225
+UNUSED,Unused Tax Code,0
+VA.ACCO2,VA Accomack Co .0100,0.053
+VA.ALBE2,VA Albemarle Co .0100,0.053
+VA.ALECTY2,VA Alexandria City .0100,0.06
+VA.ALLE2,VA Alleghany Co .0100,0.053
+VA.AMEL2,VA Amelia Co .0100,0.053
+VA.AMHE2,VA Amherst Co .0100,0.053
+VA.APPO2,VA Appomattox Co .0100,0.053
+VA.ARLI2,VA Arlington Co .0100,0.06
+VA.AUGU2,VA Augusta Co .0100,0.053
+VA.BATH2,VA Bath Co .0100,0.053
+VA.BEDCTY2,VA Bedford City .0100,0.05
+VA.BEDF2,VA Bedford Co .0100,0.053
+VA.BLAN2,VA Bland Co .0100,0.053
+VA.BOTE2,VA Botetourt Co .0100,0.053
+VA.BRICTY2,VA Bristol City .0100,0.053
+VA.BRUN2,VA Brunswick Co .0100,0.053
+VA.BUCH2,VA Buchanan Co .0100,0.053
+VA.BUCK2,VA Buckingham Co .0100,0.053
+VA.BUECTY2,VA Buena Vista City .0100,0.053
+VA.CAMP2,VA Campbell Co .0100,0.053
+VA.CARO2,VA Caroline Co .0100,0.053
+VA.CARR2,VA Carroll Co .0100,0.053
+VA.CHACTY2,VA Charlottesville City .0100,0.053
+VA.CHAR2,VA Charles City Co .0100,0.053
+VA.CHARL,VA.CHARLOTTECO,0.063
+VA.CHECTY2,VA Chesapeake City .0100,0.06
+VA.CHES2,VA Chesterfield Co .0100,0.06
+VA.CHRL2,VA Charlotte Co .0100,0.063
+VA.CLAR2,VA Clarke Co .0100,0.053
+VA.CLIF2,VA Clifton City Co .0100,0.053
+VA.COLCTY2,VA Colonial Heights City .0100,0.053
+VA.COVCTY2,VA Covington City .0100,0.053
+VA.CRAI2,VA Craig Co .0100,0.053
+VA.CULP2,VA Culpepper Co .0100,0.053
+VA.CUMB2,VA Cumberland Co .0100,0.06
+VA.DANCTY2,VA Danville City .0100,0.063
+VA.DICK2,VA Dickenson Co .0100,0.053
+VA.DINW2,VA Dinwiddie Co .0100,0.053
+VA.EMPCTY2,VA Emporia City .0100,0.053
+VA.ESSE2,VA Essex Co .0100,0.053
+VA.FAICTY2,VA Fairfax City .0100,0.06
+VA.FAIR2,VA Fairfax Co .0100,0.06
+VA.FALCTY2,VA Falls Church City .0100,0.06
+VA.FAUQ2,VA Fauquier Co .0100,0.053
+VA.FLOY2,VA Floyd Co .0100,0.053
+VA.FLUV2,VA Fluvanna Co .0100,0.053
+VA.FRACTY2,VA Franklin City .0100,0.06
+VA.FRAN2,VA Franklin Co .0100,0.053
+VA.FRECTY2,VA Fredricksburg City .0100,0.053
+VA.FRED2,VA Frederick Co .0100,0.053
+VA.GALCTY2,VA Galax City .0100,0.053
+VA.GILE2,VA Giles Co .0100,0.053
+VA.GLOU2,VA Gloucester Co .0100,0.063
+VA.GOOC2,VA Goochland Co .0100,0.06
+VA.GRAY2,VA Grayson Co .0100,0.053
+VA.GREE2,VA Greensville Co .0100,0.053
+VA.GREN2,VA Greene Co .0100,0.053
+VA.HALI2,VA Halifax Co .0100,0.063
+VA.HAMCTY2,VA Hampton City .0100,0.06
+VA.HANO2,VA Hanover Co .0100,0.06
+VA.HARCTY2,VA Harrisonburg City .0100,0.053
+VA.HENR2,VA Henrico Co .0100,0.06
+VA.HIGH2,VA Highland Co .0100,0.053
+VA.HNRY2,VA Henry Co .0100,0.063
+VA.HOPCTY2,VA Hopewell City .0100,0.053
+VA.ISLE2,VA Isle of Wight Co .0100,0.06
+VA.JAME2,VA James City Co .0100,0.06
+VA.KAND2,VA King and Queen Co .0100,0.053
+VA.KING2,VA King George Co .0100,0.053
+VA.KIWI2,VA King William Co .0100,0.053
+VA.LANC2,VA Lancaster Co .0100,0.053
+VA.LEE2,VA Lee Co .0100,0.053
+VA.LEXCTY2,VA Lexington City .0100,0.05
+VA.LOUD2,VA Loudoun Co .0100,0.06
+VA.LOUI2,VA Louisa Co .0100,0.053
+VA.LUNE2,VA Lunenburg Co .0100,0.053
+VA.LYNCTY2,VA Lynchburg City .0100,0.053
+VA.MADI2,VA Madison Co .0100,0.053
+VA.MANA2,VA Manassas County,0.06
+VA.MANCTY2,VA Manassas City .0100,0.06
+VA.MANPARK,VA.Manassas Park City,0.06
+VA.MARCTY2,VA Martinsville City .0100,0.053
+VA.MATH2,VA Mathews Co .0100,0.053
+VA.MECK2,VA Mecklenburg Co .0100,0.053
+VA.MIDD2,VA Middlesex Co .0100,0.053
+VA.MNPCTY2,VA Manassas Park City .0100,0.06
+VA.MONT2,VA Montgomery Co .0100,0.053
+VA.NELS2,VA Nelson Co .0100,0.053
+VA.NEWCTY2,VA Newport News City .0100,0.06
+VA.NEWK2,VA New Kent Co .0100,0.053
+VA.NORA2,VA Northampton Co .0100,0.063
+VA.NORCTY2,VA Norfolk City .0100,0.06
+VA.NORT2,VA Norton City  .0100,0.053
+VA.NORU2,VA Northumberland Co .0100,0.053
+VA.NOTT2,VA Nottoway Co .0100,0.053
+VA.NRTCTY2,VA Norton City .0100,0.05
+VA.ORAN2,VA Orange Co .0100,0.053
+VA.PAGE2,VA Page Co .0100,0.053
+VA.PATR2,VA Patrick Co .0100,0.063
+VA.PETCTY2,VA Petersburg City .0100,0.053
+VA.PITT2,VA Pittsylvania Co .0100,0.063
+VA.POQCTY2,VA Poquoson City .0100,0.06
+VA.PORCTY2,VA Portsmouth City .0100,0.06
+VA.POWH2,VA Powhatan Co .0100,0.06
+VA.PRIN2,VA Prince Edward Co .0100,0.053
+VA.PRING2,VA Prince George Co .0100,0.053
+VA.PRWI2,VA.Prince Wiliam Co .0100,0.06
+VA.PULA2,VA Pulaski Co .0100,0.053
+VA.RADCTY2,VA Radford City .0100,0.053
+VA.RAPP2,VA Rappahannock Co .0100,0.053
+VA.RICCTY2,VA Richmond city .0100,0.05
+VA.RICH2,VA Rchmond Co .0100,0.053
+VA.ROACTY2,VA Roanoke City .0100,0.05
+VA.ROANCO2,VA Roanoke Co .0100,0.053
+VA.ROCH2,VA Rockingham Co .0100,0.053
+VA.ROCK2,VA Rockbridge Co .0100,0.053
+VA.RUSS2,VA Russell Co .0100,0.053
+VA.SALCTY2,VA Salem City .0100,0.053
+VA.SCOT2,VA Scott Co .0100,0.053
+VA.SHEN2,VA Shenandoah Co .0100,0.053
+VA.SMYT2,VA Smyth Co .0100,0.053
+VA.SOUT2,VA Southampton Co .0100,0.06
+VA.SPOT2,VA Spotsylvania Co .0100,0.053
+VA.STACTY2,VA Staunton City .0100,0.053
+VA.STAF2,VA Stafford Co .0100,0.053
+VA.SUFCTY2,VA Suffolk City .0100,0.06
+VA.SURR2,VA Surry Co .0100,0.053
+VA.SUSS2,VA Sussex Co .0100,0.053
+VA.TAZE2,VA Tazewell Co .0100,0.053
+VA.VIRCTY2,VA Virginia Beach City .0100,0.06
+VA.WAR2,VA Warren Co .0100,0.053
+VA.WARR2,VA Warren Co .0100,0.053
+VA.WASH2,VA Washington Co .0100,0.053
+VA.WAYCTY2,VA Waynesboro City .0100,0.053
+VA.WEST2,VA Westmoreland Co .0100,0.053
+VA.WILCTY2,VA Williamsburg City .0100,0.07
+VA.WINCTY2,VA Winchester City .0100,0.053
+VA.WISE2,VA Wise Co .0100,0.053
+VA.WYTH2,VA Wythe Co .0100,0.053
+VA.YORK2,VA York Co .0100,0.07
+WV.CHARLES,WV.Charleston,0.065
+WV.HARRISV,WV.Harrisville,0.07
+WV.HUNTING,WV.Huntington,0.07
+WV.QUINWOO,WV.Quinwood,0.07
+WV.RUPERT,WV.Rupert,0.07
+WV.STATE,WV State Tax,0.06
+WV.WHEELIN,WV.Wheeling,0.065
+WV.WILLIAM,WV.Williamstown,0.07
