@@ -14,7 +14,6 @@ import yaml
 from typing import List, Dict, Any, Optional
 import requests
 
-# Add this near the top of the file, after the imports
 # Create logs directory if it doesn't exist
 os.makedirs("logs", exist_ok=True)
 
@@ -80,6 +79,30 @@ def get_hubspot_api_token(config_path="../hubspot.config.yml", portal_name=None)
 BATCH_SIZE = 100  # HubSpot's maximum batch size
 API_ENDPOINT = "https://api.hubapi.com/crm/v3/objects/taxes/batch/create"
 
+def validate_api_token(api_token: str) -> bool:
+    """Validate the API token by making a simple HubSpot API call."""
+    logger.info("Validating API token...")
+    
+    # Try to get account information using the token
+    headers = {
+        "Authorization": f"Bearer {api_token}",
+        "Content-Type": "application/json"
+    }
+    
+    try:
+        # Use a simple endpoint to validate the token
+        response = requests.get("https://api.hubapi.com/integrations/v1/me", headers=headers)
+        if response.status_code == 200:
+            logger.info("API token is valid")
+            return True
+        else:
+            logger.error(f"API token validation failed: {response.status_code}")
+            logger.error(f"Response: {response.text}")
+            return False
+    except Exception as e:
+        logger.error(f"API token validation error: {e}")
+        return False
+
 def read_csv_data(file_path: str) -> List[Dict[str, Any]]:
     """Read and parse the CSV file containing tax data."""
     try:
@@ -115,15 +138,21 @@ def transform_record_for_hubspot(record: Dict[str, Any]) -> Dict[str, Any]:
     jurisdiction_desc = record.get("jurisdiction_desc", "")
     tax_percentage = record.get("tax_percentage", "")
     
+    # Try to convert tax_percentage to float if it's not empty
+    try:
+        rate_value = float(tax_percentage) if tax_percentage else None
+    except (ValueError, TypeError):
+        rate_value = tax_percentage  # Keep as string if conversion fails
+    
     # Create HubSpot tax object properties
     properties = {
-        "name": jurisdiction_desc,         # Use description as name
-        "rate": tax_percentage,            # Tax rate/percentage
-        "externalId": jurisdiction_id      # Store original ID as reference
+        "name": jurisdiction_desc,
+        "rate": rate_value,
+        "externalId": jurisdiction_id
     }
     
-    # Remove empty values to avoid creating blank properties
-    return {k: v for k, v in properties.items() if v}
+    # Remove empty or None values
+    return {k: v for k, v in properties.items() if v is not None and v != ""}
 
 def chunk_data(data: List[Dict[str, Any]], chunk_size: int) -> List[List[Dict[str, Any]]]:
     """Split data into chunks of specified size."""
@@ -148,8 +177,19 @@ def send_batch_request(payload: Dict[str, Any], api_token: str) -> Dict[str, Any
         "Content-Type": "application/json"
     }
     
+    logger.info(f"Sending request to: {API_ENDPOINT}")
+    logger.info(f"Request payload sample: {json.dumps(payload)[:200]}...")  # Log first 200 chars of payload
+    
     try:
         response = requests.post(API_ENDPOINT, headers=headers, json=payload)
+        
+        # Log detailed information about the response
+        logger.info(f"Response status code: {response.status_code}")
+        
+        # If there's an error, log the complete response text
+        if response.status_code >= 400:
+            logger.error(f"Error response: {response.text}")
+        
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
@@ -184,11 +224,23 @@ def import_taxes(csv_file_path: str, api_token: Optional[str] = None) -> Dict[st
             logger.error(f"Failed to load HubSpot API token: {e}")
             raise
     
+    # Validate the API token
+    if not validate_api_token(api_token):
+        logger.error("Invalid API token. Please check your configuration.")
+        stats["failed"] = 1  # To indicate failure
+        return stats
+    
     # Read and validate CSV data
     data = read_csv_data(csv_file_path)
     if not validate_csv_data(data):
         logger.error("CSV validation failed. Import aborted.")
         return stats
+    
+    # Print a sample record for diagnostic purposes
+    if data:
+        logger.info(f"Sample record from CSV: {json.dumps(data[0])}")
+        sample_transformed = transform_record_for_hubspot(data[0])
+        logger.info(f"Sample transformed record: {json.dumps(sample_transformed)}")
     
     stats["total"] = len(data)
     logger.info(f"Starting import of {stats['total']} tax records")
