@@ -10,33 +10,81 @@ import csv
 import json
 import time
 import logging
+import yaml
 from typing import List, Dict, Any
 import requests
-from dotenv import load_dotenv
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("logs/tax_import.log"),
+        logging.FileHandler("tax_import.log"),
         logging.StreamHandler()
     ]
 )
 logger = logging.getLogger(__name__)
 
-# Load environment variables
-load_dotenv()
-API_KEY = os.getenv("HUBSPOT_API_KEY")
-if not API_KEY:
-    logger.error("HUBSPOT_API_KEY not found in environment variables")
+def get_hubspot_api_token(config_path="../hubspot.config.yml", portal_name=None):
+    """
+    Read HubSpot API token from the hubspot.config.yml file.
+    
+    Args:
+        config_path: Path to the hubspot.config.yml file
+        portal_name: Name of the portal to use (if None, uses defaultPortal)
+        
+    Returns:
+        The access token for the specified portal
+    """
+    # Ensure the config file exists
+    if not os.path.isfile(config_path):
+        raise FileNotFoundError(f"HubSpot config file not found at {config_path}")
+    
+    # Read the config file
+    with open(config_path, 'r') as file:
+        config = yaml.safe_load(file)
+    
+    # Determine which portal to use
+    target_portal = portal_name or config.get('defaultPortal')
+    if not target_portal:
+        raise ValueError("No portal specified and no defaultPortal found in config")
+    
+    # Find the portal in the config
+    portal_config = None
+    for portal in config.get('portals', []):
+        if portal.get('name') == target_portal:
+            portal_config = portal
+            break
+    
+    if not portal_config:
+        raise ValueError(f"Portal '{target_portal}' not found in config")
+    
+    # Extract the access token
+    auth = portal_config.get('auth', {})
+    token_info = auth.get('tokenInfo', {})
+    access_token = token_info.get('accessToken')
+    
+    if not access_token:
+        raise ValueError(f"No access token found for portal '{target_portal}'")
+    
+    # Clean up the token (remove any YAML block indicators like '>')
+    access_token = access_token.strip()
+    
+    return access_token
+
+# Get API token from HubSpot config
+try:
+    API_TOKEN = get_hubspot_api_token()
+    logger.info(f"Successfully loaded API token for portal")
+except Exception as e:
+    logger.error(f"Failed to load HubSpot API token: {e}")
     exit(1)
 
 # Constants
 BATCH_SIZE = 100  # HubSpot's maximum batch size
 API_ENDPOINT = "https://api.hubapi.com/crm/v3/objects/taxes/batch/create"
 HEADERS = {
-    "Authorization": f"Bearer {API_KEY}",
+    "Authorization": f"Bearer {API_TOKEN}",
     "Content-Type": "application/json"
 }
 
@@ -56,7 +104,7 @@ def validate_csv_data(data: List[Dict[str, Any]]) -> bool:
         logger.error("CSV file is empty")
         return False
     
-    required_fields = ['name', 'rate', 'country', 'state']  # Adjust based on your tax CSV structure
+    required_fields = ['jurisdiction_id', 'jurisdiction_desc', 'tax_percentage']
     
     # Check if required fields exist in the first row
     first_row = data[0]
@@ -70,17 +118,16 @@ def validate_csv_data(data: List[Dict[str, Any]]) -> bool:
 
 def transform_record_for_hubspot(record: Dict[str, Any]) -> Dict[str, Any]:
     """Transform a CSV record into the format expected by HubSpot API."""
-    # Adjust these mappings based on your CSV structure and HubSpot properties
+    # Extract values from the record
+    jurisdiction_id = record.get("jurisdiction_id", "")
+    jurisdiction_desc = record.get("jurisdiction_desc", "")
+    tax_percentage = record.get("tax_percentage", "")
+    
+    # Create HubSpot tax object properties
     properties = {
-        "name": record.get("name", ""),
-        "rate": record.get("rate", ""),
-        "country": record.get("country", ""),
-        "state": record.get("state", ""),
-        "city": record.get("city", ""),
-        "postal_code": record.get("postal_code", ""),
-        "type": record.get("type", ""),
-        "category": record.get("category", ""),
-        "description": record.get("description", "")
+        "name": jurisdiction_desc,         # Use description as name
+        "rate": tax_percentage,            # Tax rate/percentage
+        "externalId": jurisdiction_id      # Store original ID as reference
     }
     
     # Remove empty values to avoid creating blank properties
@@ -173,13 +220,25 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description="Import tax data from CSV to HubSpot")
     parser.add_argument("csv_file", help="Path to the CSV file containing tax data")
+    parser.add_argument("--config", default="../hubspot.config.yml", 
+                        help="Path to HubSpot config file (default: ../hubspot.config.yml)")
+    parser.add_argument("--portal", help="HubSpot portal name to use (default: uses defaultPortal from config)")
     args = parser.parse_args()
     
     try:
-        # Ensure logs directory exists
-        os.makedirs("logs", exist_ok=True)
+        # Update API token if portal or config specified
+        if args.portal or args.config != "../hubspot.config.yml":
+            global API_TOKEN, HEADERS
+            API_TOKEN = get_hubspot_api_token(args.config, args.portal)
+            HEADERS = {
+                "Authorization": f"Bearer {API_TOKEN}",
+                "Content-Type": "application/json"
+            }
+            logger.info(f"Using API token for portal: {args.portal or 'default'}")
         
         results = import_taxes(args.csv_file)
         logger.info(f"Import summary: {json.dumps(results)}")
+        print(f"Import completed: {results['successful']} successful, {results['failed']} failed")
     except Exception as e:
         logger.error(f"Import failed: {e}")
+        print(f"Import failed: {e}")
