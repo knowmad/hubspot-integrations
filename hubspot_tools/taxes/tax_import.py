@@ -148,7 +148,7 @@ def transform_record_for_hubspot(record: Dict[str, Any]) -> Dict[str, Any]:
     properties = {
         "name": jurisdiction_desc,
         "rate": rate_value,
-        "externalId": jurisdiction_id
+        "name": jurisdiction_id
     }
     
     # Remove empty or None values
@@ -281,3 +281,92 @@ def import_taxes(csv_file_path: str, api_token: Optional[str] = None) -> Dict[st
     
     logger.info(f"Import completed: {stats['successful']} successful, {stats['failed']} failed")
     return stats
+
+def get_hubspot_taxes(api_token: str, limit: int = 100) -> List[Dict[str, Any]]:
+    """
+    Retrieve all tax objects from HubSpot with their properties.
+    Handles pagination to get all records beyond the limit.
+    
+    Args:
+        api_token: HubSpot API token
+        limit: Maximum number of records per page (default: 100)
+        
+    Returns:
+        List of tax objects with all their properties
+    """
+    # First, get the properties available for tax objects
+    properties_endpoint = "https://api.hubapi.com/crm/v3/properties/taxes"
+    taxes_endpoint = "https://api.hubapi.com/crm/v3/objects/taxes"
+    
+    headers = {
+        "Authorization": f"Bearer {api_token}",
+        "Content-Type": "application/json"
+    }
+    
+    all_taxes = []
+    
+    try:
+        # Step 1: Get available properties for taxes
+        logger.info("Retrieving available properties for tax objects...")
+        props_response = requests.get(properties_endpoint, headers=headers)
+        
+        if props_response.status_code >= 400:
+            logger.error(f"Error getting properties: {props_response.text}")
+            props_response.raise_for_status()
+            
+        props_data = props_response.json()
+        property_names = [prop["name"] for prop in props_data.get("results", [])]
+        
+        logger.info(f"Found {len(property_names)} available properties for taxes")
+        
+        # Step 2: Get all tax objects with pagination
+        after = None
+        page_count = 0
+        
+        while True:
+            page_count += 1
+            params = {
+                "limit": limit,
+                "properties": property_names
+            }
+            
+            # Add pagination token if we have one
+            if after:
+                params["after"] = after
+                
+            logger.info(f"Retrieving tax page {page_count} (limit: {limit}, after: {after})...")
+            taxes_response = requests.get(taxes_endpoint, headers=headers, params=params)
+            
+            if taxes_response.status_code >= 400:
+                logger.error(f"Error getting taxes: {taxes_response.text}")
+                taxes_response.raise_for_status()
+                
+            taxes_data = taxes_response.json()
+            page_results = taxes_data.get("results", [])
+            
+            # Add this page's results to our collection
+            all_taxes.extend(page_results)
+            logger.info(f"Retrieved {len(page_results)} tax objects on page {page_count}")
+            
+            # Check if there are more pages
+            paging = taxes_data.get("paging", {})
+            next_page = paging.get("next", {})
+            after = next_page.get("after")
+            
+            # If no "after" token, we've reached the last page
+            if not after:
+                break
+        
+        logger.info(f"Retrieved a total of {len(all_taxes)} tax objects")
+        
+        # Log a sample for debugging
+        if all_taxes:
+            logger.info(f"Sample tax object: {json.dumps(all_taxes[0])}")
+            
+        return all_taxes
+        
+    except Exception as e:
+        logger.error(f"Failed to retrieve taxes: {e}")
+        if hasattr(e, 'response') and e.response:
+            logger.error(f"Response: {e.response.text}")
+        raise
