@@ -14,6 +14,10 @@ import yaml
 from typing import List, Dict, Any, Optional
 import requests
 
+# Add this near the top of the file, after the imports
+# Create logs directory if it doesn't exist
+os.makedirs("logs", exist_ok=True)
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
